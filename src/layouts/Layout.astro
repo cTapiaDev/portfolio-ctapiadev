@@ -21,31 +21,85 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@font-face {
+		font-family: 'bebas';
+		src: url('./../assets/font/BebasNeue-Regular.ttf');
+	}
+
+	@font-face {
+		font-family: 'anka';
+		src: url('./../assets/font/anka-coder.ttf');
+	}
+
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--color-bg: #1C1A1F;
+		--color-primary: #CF006A;
+		--color-light: #FEFEFC;
+		--color-light-glass: rgba(254, 254, 252, 0.6);
+
+		--font-title: 'bebas';
+		--font-general: 'anka';
 	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		width: 4px;
+		background-color: var(--color-primary);
+	}
+
+	::-webkit-scrollbar-track {
+		width: 8px;
+		background-color: var(--color-bg);
+	}
+
+	*,
+	*::after,
+	*::before {
+		margin: 0;
+		padding: 0;
+		box-sizing: content-box;
+	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		font-family: var(--font-general);
+		overflow-x: hidden;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	body {
+		width: 100vw;
+		height: 100vh;
+		background-color: var(--color-bg);
+		display: grid;
+		place-items: center;
 	}
+
+	main {
+		color: var(--color-bg);
+	}
+
+	section {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 1rem;
+		box-sizing: border-box;
+	}
+
+	h1, h2 {
+		font-family: var(--font-title);
+	}
+
+	p { 
+		font-size: 12px;
+		text-wrap: balance;
+	}
+
+	.h-large > div {
+		height: 576.66px;
+	}
+	
 </style>
