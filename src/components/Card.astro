@@ -7,10 +7,12 @@ interface Props {
     title: string;
     name: string;
     description: string;
+    description2?: string;
+    description3?: string;
     skills?: Array<string>;
 }
 
-const { dateStart, dateEnd = "Presente", title, name, description, skills } = Astro.props as Props;
+const { dateStart, dateEnd = "Presente", title, name, description, description2, description3, skills } = Astro.props as Props;
 ---
 
 <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
@@ -20,6 +22,8 @@ const { dateStart, dateEnd = "Presente", title, name, description, skills } = As
     <div class="z-10 sm:col-span-6">
         <h3 class="font-medium leading-snug text-slate-200">{ title } — { name }</h3>
         <p class="mt-2 text-sm leading-normal">{ description }</p>
+        <p class="mt-2 text-sm leading-normal">{ description2 }</p>
+        <p class="mt-2 text-sm leading-normal">{ description3 }</p>
         <ul class="mt-2 flex flex-wrap">
             {skills.map((skill) => (
                 <li class="mr-1.5 mt-2">
