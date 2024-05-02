@@ -1,14 +1,18 @@
 ---
+import MouseEffect from '../components/MouseEffect.astro';
 import Dinamic from '../layouts/Dinamic.astro';
 import Layout from '../layouts/Layout.astro';
 import Static from '../layouts/Static.astro';
 ---
 
 <Layout title="Welcome to Portfolio cTapiaDev">
-	<div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-		<div class="lg:flex lg:justify-between lg:gap-4">
-			<Static />
-			<Dinamic />
+	<div class="relative">
+		<MouseEffect />
+		<div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+			<div class="lg:flex lg:justify-between lg:gap-4">
+				<Static />
+				<Dinamic />
+			</div>
 		</div>
 	</div>
 </Layout>
