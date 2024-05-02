@@ -1,0 +1,31 @@
+---
+import Pill from './Pill.astro';
+
+interface Props {
+    dateStart: string;
+    dateEnd?: string;
+    title: string;
+    name: string;
+    description: string;
+    skills?: Array<string>;
+}
+
+const { dateStart, dateEnd = "Presente", title, name, description, skills } = Astro.props as Props;
+---
+
+<div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+    <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase ctracking-wide text-slate-500 sm:col-span-2">
+        { dateStart } — { dateEnd }
+    </header>
+    <div class="z-10 sm:col-span-6">
+        <h3 class="font-medium leading-snug text-slate-200">{ title } — { name }</h3>
+        <p class="mt-2 text-sm leading-normal">{ description }</p>
+        <ul class="mt-2 flex flex-wrap">
+            {skills.map((skill) => (
+                <li class="mr-1.5 mt-2">
+                    <Pill>{ skill }</Pill>
+                </li>
+            ))}
+        </ul>
+    </div>
+</div>
