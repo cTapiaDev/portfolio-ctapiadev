@@ -37,9 +37,11 @@ const { title } = Astro.props;
 	:root {
 		--color-bg: #1c1a1f;
 		--color-bg-op: rgba(28, 26, 31, 0.75);
-		--color-primary: #CF006A;
+		--color-primary: rgb(207, 0, 106);
+		--color-primary-op: rgba(207, 0, 106, 0.10);
 		--color-light: #E2E8F0;
 		--color-text: #94A3B8;
+		--color-pill: #d5679f;
 
 		--font-general: 'inter';
 		--font-code: 'anka';
@@ -53,7 +55,7 @@ const { title } = Astro.props;
 
 	::-webkit-scrollbar-thumb {
 		width: 4px;
-		background-color: var(--color-primary);
+		background-color: var(--color-pill);
 	}
 
 	::-webkit-scrollbar-track {
@@ -74,6 +76,10 @@ const { title } = Astro.props;
 	
 	:where(h1, h2) {
 		color: var(--color-light);
+	}
+
+	a {
+		cursor: pointer;
 	}
 
 	p { 
