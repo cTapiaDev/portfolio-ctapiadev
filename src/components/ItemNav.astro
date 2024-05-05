@@ -9,8 +9,8 @@ const { id, href, class: className } = Astro.props as Props;
 ---
 <li>
     <a id=`${id}` class={`group flex items-center py-3 ${className}`} href=`${href}`>
-        <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
-        <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+        <span class="nav-indicator mr-4 h-px w-8 transition-all group-hover:w-16 group-focus-visible:w-16  motion-reduce:transition-none"></span>
+        <span class="nav-text text-xs font-bold uppercase tracking-widest">
             <slot />
         </span>
     </a>
@@ -19,10 +19,22 @@ const { id, href, class: className } = Astro.props as Props;
 <style>
     .active .nav-indicator {
         width: 4rem;
-        background-color: rgba(226, 232, 240, 1);
+        background-color: var(--color-primary);
     }
 
     .active .nav-text {
-        color: rgba(226, 232, 240, 1);
+        color: var(--color-primary);
+    }
+
+    a span:nth-child(1) {
+        background-color: var(--color-dark);
+    }
+
+    a:hover span:nth-child(1) {
+        background-color: var(--color-primary);
+    }
+
+    a:hover span {
+        color: var(--color-primary);
     }
 </style>
